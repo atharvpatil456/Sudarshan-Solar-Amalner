@@ -1,0 +1,578 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudarshan Solar Sales and Services - Amalner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css_reels.css">
+    <link rel="stylesheet" href="/Non_Responsive.css">
+    <link rel="stylesheet" href="/Responsive_Mobile.css">
+</head>
+<body>
+
+    <!-- Vertical Social Bar -->
+    <div class="vertical-social-bar">
+        <a href="https://wa.me/+917507302832" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.facebook.com/YOUR_FACEBOOK_PAGE" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.youtube.com/YOUR_YOUTUBE_CHANNEL" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/YOUR_INSTAGRAM_PAGE" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+
+    <!-- Social Media Sidebar -->
+    <div class="social-sidebar">
+        <a href="#" class="social-item"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-item"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-item"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-item"><i class="fab fa-linkedin"></i></a>
+        <a href="#" class="social-item"><i class="fab fa-youtube"></i></a>
+        <a href="https://wa.me/+917507302832" class="social-item"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+    <!-- Enquiry Sidebar -->
+    <div class="enquiry-sidebar">
+        <button class="enquiry-btn" onclick="toggleEnquiry()"><i class="fas fa-envelope"></i></button>
+        <form class="enquiry-form" id="enquiry-form" action="https://formspree.io/f/mldlppnv" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="tel" name="phone" placeholder="Phone Number" required>
+    <input type="email" name="email" placeholder="Email Address" required>
+    <textarea name="message" placeholder="Your Message" rows="3" required></textarea>
+    <button type="submit">Send Enquiry</button>
+</form>
+
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo">☀️</div>
+                    <div>
+                        
+                         <!-- data-en="Sudarshan Solar Sales and Services" data-mr="सुदर्शन सोलर सेल्स अँड सर्व्हिसेस" -->
+                       
+                        <div class="company-name" >Sudarshan Solar Sales and Services</div>
+                        <div class="company-location" 
+                        >Amalner</div>
+                        <!-- data-en="Amalner" data-mr="अमलनेर" -->
+                    </div>
+                </div>
+                <div class="header-contact">
+                    <div class="header-contact-item">
+                        <span class="header-contact-icon"><i class="fas fa-map-marker-alt"></i></span>
+                        <span class="header-contact-text">Shop No: 10, Cotton Market, Dhule Road, Amalner-425401</span>
+                    </div>
+                    <div class="header-contact-item">
+                        <span class="header-contact-icon"><i class="fas fa-phone"></i></span>
+                        <span class="header-contact-text">+91 7507302832</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-content">
+                <div class="nav-d">☀️</div>
+                <div class="nav-links" id="navLinks">
+                    <div class="nav-item">
+                        <a href="#home" class="nav-link" data-en="Home" data-mr="होम">Home</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#reelsdoc" class="nav-link" data-en="Reels" data-mr="रील्स">Reels</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#products" class="nav-link" data-en="Products" data-mr="उत्पादने">Products</a>
+                        <div class="dropdown">
+                            <div class="dropdown-item" onclick="showProduct('solar-water-heater')" data-en="Solar Water Heater" data-mr="सोलर वॉटर हीटर">Solar Water Heater</div>
+                            <div class="dropdown-item" onclick="showProduct('solar-grid-connected')" data-en="Solar Grid Connected System" data-mr="सोलर ग्रिड कनेक्टेड सिस्टम">Solar Grid Connected System</div>
+                            <div class="dropdown-item" onclick="showProduct('solar-off-grid')" data-en="Solar Off-Grid System" data-mr="सोलर ऑफ-ग्रिड सिस्टम">Solar Off-Grid System</div>
+                            <div class="dropdown-item" onclick="showProduct('solar-mini-grid')" data-en="Solar Mini-grid System" data-mr="सोलर मिनी-ग्रिड सिस्टम">Solar Mini-grid System</div>
+                            <div class="dropdown-item" onclick="showProduct('solar-repair')" data-en="Solar Repair and Maintenance" data-mr="सोलर रिपेअर आणि मेंटेनन्स">Solar Repair and Maintenance</div>
+                        </div>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#services" class="nav-link" data-en="Services" data-mr="सेवा">Services</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#about" class="nav-link" data-en="About Us" data-mr="आमच्याबद्दल">About Us</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#team" class="nav-link" data-en="Team" data-mr="टीम">Team</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#contact" class="nav-link" data-en="Contact Us" data-mr="संपर्क">Contact Us</a>
+                    </div>
+                    <div class="nav-item">
+                        <div class="language-selector">
+                            <select onchange="changeLanguage(this.value)">
+                                <option value="mr" selected>मराठी</option>
+                                <option value="en">English</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-nav-toggle" onclick="toggleMobileNav()">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="slider-container_on">
+    <div class="slider-track_on">
+      <img src="images/logo.png" alt="Sudarshan Saur" />
+      <img src="images/logo_74e18815-13ce-4a65-af24-e6423617547d_140x@2x.png" alt="Loom Solar" />
+      <img src="images/logoSolar.png" alt="Adani Solar" />
+      <img src="images/tata-power-solar-logo-removebg-preview.png" alt="Tata Power Solar" />
+      <img src="images/Waaree-logo.png" alt="Waaree Solar" />
+      <img src="images/BANNER1.png" alt="UTL Solar" />
+      <!-- Repeating for continuous loop effect -->
+      <img src="images/logo.png" alt="Sudarshan Saur" />
+      <img src="images/logo_74e18815-13ce-4a65-af24-e6423617547d_140x@2x.png" alt="Loom Solar" />
+      <img src="images/logoSolar.png" alt="Adani Solar" />
+      <img src="images/tata-power-solar-logo-removebg-preview.png" alt="Tata Power Solar" />
+      <img src="images/Waaree-logo.png" alt="Waaree Solar" />
+      <img src="images/BANNER1.png" alt="UTL Solar" />
+    </div>
+  </div>
+
+
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <class="container">
+           
+<div class="modal-overlay" id="modalOverlay">
+    <!-- Product Pages as Modals -->
+    <div id="solar-water-heater" class="product-page">
+        <button class="close-btn" onclick="hideProduct()">×</button>
+        <div class="product-header">
+            <h1 class="product-title">Solar Water Heater</h1>
+            <img src="/images/solar_heater1.jpg" alt="Solar Water Heater" class="product-image" >
+        </div>
+        <div class="product-details">
+            <div class="product-info">
+                <h3>Product Information</h3>
+                <p>Our Solar Water Heaters are designed to provide efficient, eco-friendly hot water solutions for residential and commercial use. These systems harness solar energy to heat water, significantly reducing electricity costs.</p>
+                <h4>Key Features:</h4>
+                <ul>
+                    <li>Energy efficient solar collectors</li>
+                    <li>Insulated storage tank</li>
+                    <li>Automatic temperature control</li>
+                    <li>Corrosion resistant materials</li>
+                    <li>Easy installation and maintenance</li>
+                </ul>
+            </div>
+            <div class="product-specs">
+                <h3>Technical Specifications</h3>
+                <ul>
+                    <li><strong>Capacity:</strong> 100L to 500L</li>
+                    <li><strong>Material:</strong> Stainless Steel</li>
+                    <li><strong>Collector Type:</strong> Flat Plate Collector</li>
+                    <li><strong>Warranty:</strong> 5 Years</li>
+                    <li><strong>Installation:</strong> Roof-mounted</li>
+                    <li><strong>Efficiency:</strong> 70-80%</li>
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="solar-grid-connected" class="product-page">
+        <button class="close-btn" onclick="hideProduct()">×</button>
+        <div class="product-header">
+            <h1 class="product-title">Solar Grid Connected System</h1>
+            <img src="/images/on-grid-solar-sytems-solutions.webp" alt="Solar Grid Connected System" class="product-image">
+        </div>
+        <div class="product-details">
+            <div class="product-info">
+                <h3>Product Information</h3>
+                <p>Grid-connected solar systems allow you to generate your own electricity while remaining connected to the utility grid. These systems can feed excess power back to the grid, earning you credits through net metering.</p>
+                <h4>Key Features:</h4>
+                <ul>
+                    <li>High-efficiency solar panels</li>
+                    <li>Grid-tie inverter</li>
+                    <li>Net metering capability</li>
+                    <li>Monitoring system</li>
+                    <li>No battery storage required</li>
+                </ul>
+            </div>
+            <div class="product-specs">
+                <h3>Technical Specifications</h3>
+                <ul>
+                    <li><strong>System Size:</strong> 1kW to 100kW</li>
+                    <li><strong>Panel Type:</strong> Monocrystalline/Polycrystalline</li>
+                    <li><strong>Inverter:</strong> String/Central Inverter</li>
+                    <li><strong>Efficiency:</strong> 18-22%</li>
+                    <li><strong>Warranty:</strong> 25 Years on Panels</li>
+                    <li><strong>Payback Period:</strong> 4-6 Years</li>
+                    <li><strong>Lifespan:</strong> 25+ Years</li>
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="solar-off-grid" class="product-page">
+        <button class="close-btn" onclick="hideProduct()">×</button>
+        <div class="product-header">
+            <h1 class="product-title">Solar Off-Grid System</h1>
+            <img src="images/Off_grid_1.jpg" alt="Solar Off-Grid System" class="product-image">
+        </div>
+        <div class="product-details">
+            <div class="product-info">
+                <h3>Product Information</h3>
+                <p>Off-grid solar systems provide complete energy independence, perfect for remote locations or as backup power solutions. These systems include battery storage to ensure power availability 24/7.</p>
+                <h4>Key Features:</h4>
+                <ul>
+                    <li>Complete energy independence</li>
+                    <li>Battery storage system</li>
+                    <li>Charge controller</li>
+                    <li>Pure sine wave inverter</li>
+                    <li>Backup power capability</li>
+                </ul>
+            </div>
+            <div class="product-specs">
+                <h3>Technical Specifications</h3>
+                <ul>
+                    <li><strong>System Size:</strong> 500W to 10kW</li>
+                    <li><strong>Battery Type:</strong> Lithium-ion/Lead-acid</li>
+                    <li><strong>Backup Time:</strong> 8-24 hours</li>
+                    <li><strong>Inverter:</strong> Pure Sine Wave</li>
+                    <li><strong>Warranty:</strong> 5 Years System</li>
+                    <li><strong>Efficiency:</strong> 85-95%</li>
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="solar-mini-grid" class="product-page">
+        <button class="close-btn" onclick="hideProduct()">×</button>
+        <div class="product-header">
+            <h1 class="product-title">Solar Mini-Grid System</h1>
+            <img src="images/Mini_Grid_1.jpg" alt="Solar Mini-Grid System" class="product-image">
+        </div>
+        <div class="product-details">
+            <div class="product-info">
+                <h3>Product Information</h3>
+                <p>Mini-grid systems are small-scale power generation and distribution networks that can operate independently or in conjunction with the main electrical grid. Perfect for communities and small businesses.</p>
+                <h4>Key Features:</h4>
+                <ul>
+                    <li>Distributed energy system</li>
+                    <li>Multiple connection points</li>
+                    <li>Smart grid technology</li>
+                    <li>Load balancing capability</li>
+                    <li>Remote monitoring</li>
+                </ul>
+            </div>
+            <div class="product-specs">
+                <h3>Technical Specifications</h3>
+                <ul>
+                    <li><strong>System Size:</strong> 10kW to 1MW</li>
+                    <li><strong>Voltage:</strong> 400V/11kV</li>
+                    <li><strong>Connections:</strong> Multiple households/businesses</li>
+                    <li><strong>Control:</strong> Smart grid management</li>
+                    <li><strong>Warranty:</strong> 10 Years</li>
+                    <li><strong>Efficiency:</strong> 90-95%</li>
+                </ul>
+           
+            </div>
+        </div>
+    </div>
+
+    <div id="solar-repair" class="product-page">
+        <button class="close-btn" onclick="hideProduct()">×</button>
+        <div class="product-header">
+            <h1 class="product-title">Solar Repair and Maintenance</h1>
+            <img src="images/Repair_Solar.webp" alt="Solar Repair and Maintenance" class="product-image">
+        </div>
+        <div class="product-details">
+            <div class="product-info">
+                <h3>Service Information</h3>
+                <p>Our comprehensive repair and maintenance services ensure your solar systems operate at peak efficiency. Regular maintenance extends system life and maximizes energy production.</p>
+                <h4>Services Include:</h4>
+                <ul>
+                    <li>Panel cleaning and inspection</li>
+                    <li>Inverter maintenance</li>
+                    <li>Electrical connection check</li>
+                    <li>Performance monitoring</li>
+                    <li>Component replacement</li>
+                    <li>System upgrades</li>
+                </ul>
+            </div>
+            <div class="product-specs">
+                <h3>Service Specifications</h3>
+                <ul>
+                    <li><strong>Response Time:</strong> 24-48 hours</li>
+                    <li><strong>Service Area:</strong> Amalner & surrounding areas</li>
+                    <li><strong>Maintenance:</strong> Monthly/Quarterly/Annual</li>
+                    <li><strong>Warranty:</strong> 1 Year on repairs</li>
+                    <li><strong>Availability:</strong> 24/7 Emergency service</li>
+                    <li><strong>Technicians:</strong> Certified professionals</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- Home Section with Image Slider -->
+            <section id="home" class="section">
+                <div class="slider-container">
+                    <div class="slider">
+                        <div class="slide active">
+                           <img src="images/solar_installation_people.jpg" alt="Solar Installation get " width="800" height="500">
+                       
+                            <div class="slide-overlay">
+                                <div class="slide-content">
+                                    <h2 data-en="Professional Solar Installation" data-mr="व्यावसायिक सोलर इन्स्टॉलेशन">Professional Solar Installation</h2>
+                                    <p data-en="Expert installation of solar panels with premium quality and reliable service in Amalner" data-mr="अमलनेर मध्ये प्रीमियम गुणवत्ता आणि विश्वसनीय सेवेसह सोलर पॅनल्सचे तज्ञ इन्स्टॉलेशन">Expert installation of solar panels with premium quality and reliable service in Amalner</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide">
+                              <img src="images/s1.jpg" alt="Solar water heater " width="300px"  height="400px" >
+                     
+                             <div class="slide-overlay">
+                                <div class="slide-content">
+                                    <h2 data-en="Solar Water Heating Systems" data-mr="सोलर वॉटर हीटिंग सिस्टम">Solar Water Heating Systems</h2>
+                                    <p data-en="Efficient and eco-friendly water heating solutions for your home and business" data-mr="आपल्या घरासाठी आणि व्यवसायासाठी कार्यक्षम आणि पर्यावरणास अनुकूल पाणी गरम करण्याचे उपाय">Efficient and eco-friendly water heating solutions for your home and business</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide">
+                             <img src="images/main1.jpg" alt="Solar water heater " width="300px"  height="400px" >
+                     
+                            <div class="slide-overlay">
+                                <div class="slide-content">
+                                    <h2 data-en="Maintenance & Repair" data-mr="देखभाल आणि दुरुस्ती">Maintenance & Repair</h2>
+                                    <p data-en="Complete maintenance and repair services to keep your solar systems running efficiently" data-mr="आपल्या सोलर सिस्टमला कार्यक्षमतेने चालू ठेवण्यासाठी संपूर्ण देखभाल आणि दुरुस्ती सेवा">Complete maintenance and repair services to keep your solar systems running efficiently</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="slider-nav prev" onclick="changeSlide(-1)">❮</button>
+                    <button class="slider-nav next" onclick="changeSlide(1)">❯</button>
+                </div>
+            </section>
+
+
+            
+<section class="reel-stack-section">
+  <div class="reels-container">
+    <div class="reels">
+      <div class="reel">
+        <iframe src="https://www.youtube.com/embed/WzOqMKPNJCU?enablejsapi=1&playsinline=1" 
+                allow="autoplay; encrypted-media" 
+                loading="lazy">
+        </iframe>
+      </div>
+  
+      <div class="reel">
+        <iframe src="https://www.youtube.com/embed/v5fTlq5e8Ks?enablejsapi=1&playsinline=1" 
+                allow="autoplay; encrypted-media" 
+                loading="lazy">
+        </iframe>
+      </div>
+      <div class="reel">
+        <iframe src="https://www.youtube.com/embed/pAo0axmZoS0?enablejsapi=1&playsinline=1" 
+                allow="autoplay; encrypted-media" 
+                loading="lazy">
+        </iframe>
+      </div>
+      <div class="reel">
+       https://youtube.com/shorts/JqDUNDLSD9I?feature=share
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?enablejsapi=1&playsinline=1" 
+                allow="autoplay; encrypted-media" 
+                loading="lazy">
+        </iframe>
+      </div>
+      <div class="reel">
+        <iframe src="https://www.youtube.com/embed/jNQXAC9IVRw?enablejsapi=1&playsinline=1" 
+                allow="autoplay; encrypted-media" 
+                loading="lazy">
+        </iframe>
+      </div>
+      <div class="reel">
+        <iframe src="https://www.youtube.com/embed/9bZkp7q19f0?enablejsapi=1&playsinline=1" 
+                allow="autoplay; encrypted-media" 
+                loading="lazy">
+        </iframe>
+      </div>
+    </div>
+    
+    <div class="controls">
+      <button onclick="prevReel()" aria-label="Previous reel">‹</button>
+      <button onclick="nextReel()" aria-label="Next reel">›</button>
+    </div>
+  </div>
+</section>
+
+
+
+            
+            <section id="products" class="section">
+                <h2 class="section-title" data-en="Our Products" data-mr="आमची उत्पादने">Our Products</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-icon"><i class="fas fa-solar-panel"></i></div>
+                        <h3 data-en="Solar Grid Connected System" data-mr="सोलर ग्रिड कनेक्टेड सिस्टम">Solar Grid Connected System</h3>
+                        <p data-en="Connect your solar system to the grid and enjoy seamless power supply with net metering benefits." data-mr="आपल्या सोलर सिस्टमला ग्रिडशी जोडा आणि नेट मीटरिंग फायद्यांसह अखंड वीज पुरवठा मिळवा.">Connect your solar system to the grid and enjoy seamless power supply with net metering benefits.</p>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-icon"><i class="fas fa-water"></i></div>
+                        <h3 data-en="Solar Water Heater" data-mr="सोलर वॉटर हीटर">Solar Water Heater</h3>
+                        <p data-en="Eco-friendly water heating solution that reduces your electricity bills and carbon footprint." data-mr="पर्यावरणस अनुकूल पाणी गरम करण्याचे उपाय जे आपले वीज बिल आणि कार्बन फूटप्रिंट कमी करते.">Eco-friendly water heating solution that reduces your electricity bills and carbon footprint.</p>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-icon"><i class="fas fa-battery-full"></i></div>
+                        <h3 data-en="Solar Off-Grid System" data-mr="सोलर ऑफ-ग्रिड सिस्टम">Solar Off-Grid System</h3>
+                        <p data-en="Independent power generation system perfect for remote areas and backup power solutions." data-mr="दुर्गम भागांसाठी आणि बॅकअप वीज उपायांसाठी परिपूर्ण स्वतंत्र वीज निर्मिती प्रणाली.">Independent power generation system perfect for remote areas and backup power solutions.</p>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-icon"><i class="fas fa-network-wired"></i></div>
+                        <h3 data-en="Solar Mini-grid System" data-mr="सोलर मिनी-ग्रिड सिस्टम">Solar Mini-grid System</h3>
+                        <p data-en="Small-scale distributed energy system ideal for communities and small businesses." data-mr="समुदाय आणि छोट्या व्यवसायांसाठी आदर्श लहान-प्रमाणात वितरित उर्जा प्रणाली.">Small-scale distributed energy system ideal for communities and small businesses.</p>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-icon"><i class="fas fa-tools"></i></div>
+                        <h3 data-en="Solar Repair and Maintenance" data-mr="सोलर रिपेअर आणि मेंटेनन्स">Solar Repair and Maintenance</h3>
+                        <p data-en="Comprehensive repair and maintenance services to ensure optimal performance of your solar systems." data-mr="आपल्या सोलर सिस्टमची इष्टतम कार्यक्षमता सुनिश्चित करण्यासाठी सर्वसमावेशक दुरुस्ती आणि देखभाल सेवा.">Comprehensive repair and maintenance services to ensure optimal performance of your solar systems.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Services Section -->
+            <section id="services" class="section">
+                <h2 class="section-title" data-en="Our Services" data-mr="आमच्या सेवा">Our Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-sun"></i></div>
+                        <h3 data-en="All Types Of Service" data-mr="सर्व प्रकारच्या सेवा">All Types Of Service</h3>
+                        <p data-en="Complete solar system services including installation, repair, and consultation." data-mr="इन्स्टॉलेशन, दुरुस्ती आणि सल्लामसलत यासह संपूर्ण सोलर सिस्टम सेवा.">Complete solar system services including installation, repair, and consultation.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-cog"></i></div>
+                        <h3 data-en="System Maintenance" data-mr="सिस्टम मेंटेनन्स">System Maintenance</h3>
+                        <p data-en="Regular maintenance to ensure optimal performance and longevity of your solar systems." data-mr="आपल्या सोलर सिस्टमची इष्टतम कार्यक्षमता आणि दीर्घायुष्य सुनिश्चित करण्यासाठी नियमित देखभाल.">Regular maintenance to ensure optimal performance and longevity of your solar systems.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-broom"></i></div>
+                        <h3 data-en="System Cleaning" data-mr="सिस्टम साफसफाई">System Cleaning</h3>
+                        <p data-en="Professional cleaning services to maintain maximum efficiency of your solar panels." data-mr="आपल्या सोलर पॅनल्सची कमाल कार्यक्षमता राखण्यासाठी व्यावसायिक साफसफाई सेवा.">Professional cleaning services to maintain maximum efficiency of your solar panels.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-clock"></i></div>
+                        <h3 data-en="System Dismantals" data-mr="सिस्टम डिस्मॅन्टल्स">System Dismantals</h3>
+                        <p data-en="Safe and professional dismantling services for solar system relocation or removal." data-mr="सोलर सिस्टम स्थानांतरण किंवा काढण्यासाठी सुरक्षित आणि व्यावसायिक नष्ट करण्याच्या सेवा.">Safe and professional dismantling services for solar system relocation or removal.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Us Section -->
+            <section id="about" class="section">
+                <h2 class="section-title" data-en="About Us" data-mr="आमच्याबद्दल">About Us</h2>
+                <div class="about-content">
+                    <p data-en="Sudarshan Solar Sales and Services is a leading provider of solar energy solutions in Amalner. We specialize in designing, installing, and maintaining high-quality solar systems for residential, commercial, and industrial applications. With years of experience in the renewable energy sector, our team is committed to delivering sustainable and cost-effective solar solutions that help reduce energy costs and environmental impact. We pride ourselves on our technical expertise, quality products, and exceptional customer service." data-mr="सुदर्शन सोलर सेल्स अँड सर्व्हिसेस हे अमलनेर मधील सोलर एनर्जी समाधानांचा आघाडीचा पुरवठादार आहे. आम्ही निवासी, व्यावसायिक आणि औद्योगिक अनुप्रयोगांसाठी उच्च-गुणवत्तेच्या सोलर सिस्टमची रचना, स्थापना आणि देखभाल करण्यात तज्ञ आहोत. नवीकरणीय ऊर्जा क्षेत्रातील अनेक वर्षांच्या अनुभवासह, आमची टीम शाश्वत आणि किफायतशीर सोलर समाधाने देण्यासाठी वचनबद्ध आहे जी ऊर्जा खर्च आणि पर्यावरणीय प्रभाव कमी करण्यास मदत करतात. आम्हाला आमचे तांत्रिक कौशल्य, गुणवत्तेची उत्पादने आणि अपवादात्मक ग्राहक सेवा याचा अभिमान आहे.">
+                        Sudarshan Solar Sales and Services is a leading provider of solar energy solutions in Amalner.
+                        We specialize in designing, installing, and maintaining high-quality solar systems for residential,
+                        commercial, and industrial applications. With years of experience in the renewable energy sector,
+                        our team is committed to delivering sustainable and cost-effective solar solutions that help reduce
+                        energy costs and environmental impact. We pride ourselves on our technical expertise, quality products,
+                        and exceptional customer service.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Team Section -->
+            <section id="team" class="section">
+                <h2 class="section-title" data-en="Our Team" data-mr="आमची टीम">Our Team</h2>
+                <div class="team-grid">
+                    <div class="team-card">
+                        <div class="team-avatar"><img src="images/sd2.jpg" alt="Shubham Dhangar"></div>
+                        <div class="team-name">Shubham Dhangar</div>
+                        <div class="team-role" data-en="Owner + Solar Engineer And Technician" data-mr="मालक + सोलर इंजिनीअर आणि तंत्रज्ञ">Owner + Solar Engineer And Technician</div>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-avatar"><img src="images/sd1.jpg" alt="Sunil Dhangar"></div>
+                        <div class="team-name">Sunil Dhangar</div>
+                        <div class="team-role" data-en="Solar Technician" data-mr="सोलर तंत्रज्ञ">Solar Technician</div>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-avatar"><img src="images/kp1.jpg" alt="Kunal shinde"></div>
+                        <div class="team-name">Kunal shinde</div>
+                        <div class="team-role" data-en="Electrician" data-mr="इलेक्ट्रिशियन">Electrician</div>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-avatar"><img src="images/Ap1.jpg" alt="Atul Patil"></div>
+                        <div class="team-name">Atul Patil</div>
+                        <div class="team-role" data-en="Plumber" data-mr="प्लंबर">Plumber</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="section">
+                <h2 class="section-title" data-en="Contact Us" data-mr="संपर्क करा">Contact Us</h2>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <h4 data-en="Address" data-mr="पत्ता">Address</h4>
+                                <p>Shop No: 10, Cotton Market, Dhule Road, Amalner - 425401</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+91 7507302832</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>sudarshansolar35@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                            <div>
+                                <h4>Working Hours</h4>
+                                <p>Mon - Sat: 9:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="map-container">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3778.640434879639!2d75.0517909!3d21.0379682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd8c7c535d1f2c1%3A0x9dc06f1c3a070b6e!2sCotton%20Market%2C%20Dhule%20Rd%2C%20Amalner%2C%20Maharashtra%20425401!5e0!3m2!1sen!2sin!4v1720073469282!5m2!1sen!2sin"
+                            width="100%"
+                            height="450"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p data-en="2025 Sudarshan Solar Sales and Services. All rights reserved. | Designed with ❤️ for sustainable energy" data-mr="२०२५ सुदर्शन सौर विक्री आणि सेवा. सर्व हक्क राखीव. | शाश्वत ऊर्जेसाठी ❤️ सह डिझाइन केलेले">&copy; 2025 Sudarshan Solar Sales and Services. All rights reserved. | Designed with ❤️ for sustainable energy</p>
+         
+    </footer>
+
+    
+       <script src="/js_reels.js"></script>
+       <script src="/Js_Main.js"></script>
+</body>
+</html>

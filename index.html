@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Reel Stack</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    /* Container styles - can be placed in any section */
+    .reel-stack-section {
+      width: 100%;
+      padding: 20px;
+      background: #f8f9fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 400px;
+    }
+    
+    .reels-container {
+      position: relative;
+      width: 100%;
+      max-width: 320px;
+      aspect-ratio: 9/16;
+      height: auto;
+      min-height: 568px;
+      max-height: 85vh;
+      perspective: 1000px;
+      margin: 0 auto;
+    }
+    
+    .reels {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .reel {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      transform-origin: center center;
+      transition: transform 0.8s ease, opacity 0.8s ease;
+      opacity: 0;
+      z-index: 1;
+      background: #000;
+    }
+    
+    .reel iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: #000;
+    }
+
+    /* Stack positions */
+    .reel.active {
+      transform: translateX(0) scale(1) rotateY(0deg);
+      opacity: 1;
+      z-index: 5;
+    }
+    
+    .reel.left-1 {
+      transform: translateX(-120px) scale(0.9) rotateY(8deg);
+      opacity: 0.6;
+      z-index: 4;
+    }
+    
+    .reel.left-2 {
+      transform: translateX(-240px) scale(0.8) rotateY(15deg);
+      opacity: 0.4;
+      z-index: 3;
+    }
+    
+    .reel.right-1 {
+      transform: translateX(120px) scale(0.9) rotateY(-8deg);
+      opacity: 0.6;
+      z-index: 4;
+    }
+    
+    .reel.right-2 {
+      transform: translateX(240px) scale(0.8) rotateY(-15deg);
+      opacity: 0.4;
+      z-index: 3;
+    }
+    
+    .reel.hidden {
+      opacity: 0;
+      transform: scale(0.7);
+      z-index: 1;
+    }
+
+    /* Controls */
+    .controls {
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 20px;
+      z-index: 6;
+    }
+    
+    .controls button {
+      background: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #333;
+      font-weight: bold;
+    }
+    
+    .controls button:hover {
+      background: rgba(255, 255, 255, 1);
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    }
+    
+    .controls button:active {
+      transform: scale(0.95);
+    }
+
+    /* Mobile optimizations */
+    @media (max-width: 768px) {
+      .reel-stack-section {
+        padding: 15px;
+        min-height: 350px;
+      }
+      
+      .reels-container {
+        max-width: 280px;
+        min-height: 498px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .reels-container {
+        max-width: 260px;
+        min-height: 462px;
+      }
+    }
+    
+    /* Large screens */
+    @media (min-width: 1200px) {
+      .reels-container {
+        max-width: 360px;
+        min-height: 640px;
+      }
+    }
+    
+    /* Touch gestures support */
+    .reels-container {
+      touch-action: pan-y;
+    }
+    
+    /* Loading state */
+    .reel::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 40px;
+      height: 40px;
+      border: 3px solid rgba(255,255,255,0.3);
+      border-top: 3px solid #fff;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      z-index: 1;
+    }
+    
+    .reel iframe {
+      position: relative;
+      z-index: 2;
+    }
+    
+    @keyframes spin {
+      0% { transform: translate(-50%, -50%) rotate(0deg); }
+      100% { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+
+<section class="reel-stack-section">
+  <div class="reels-container">
+    <div class="reels">
+      <div class="reel">
+        <iframe src="https://www.youtube.com/embed/WzOqMKPNJCU?enablejsapi=1&playsinline=1" 
+                allow="autoplay; encrypted-media" 
+                loading="lazy">
+        </iframe>
+      </div>
+  
+      <div class="reel">
+        <iframe src="https://www.youtube.com/embed/v5fTlq5e8Ks?enablejsapi=1&playsinline=1" 
+                allow="autoplay; encrypted-media" 
+                loading="lazy">
+        </iframe>
+      </div>
+      <div class="reel">
+        <iframe src="https://www.youtube.com/embed/pAo0axmZoS0?enablejsapi=1&playsinline=1" 
+                allow="autoplay; encrypted-media" 
+                loading="lazy">
+        </iframe>
+      </div>
+      <div class="reel">
+       https://youtube.com/shorts/JqDUNDLSD9I?feature=share
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?enablejsapi=1&playsinline=1" 
+                allow="autoplay; encrypted-media" 
+                loading="lazy">
+        </iframe>
+      </div>
+      <div class="reel">
+        <iframe src="https://www.youtube.com/embed/jNQXAC9IVRw?enablejsapi=1&playsinline=1" 
+                allow="autoplay; encrypted-media" 
+                loading="lazy">
+        </iframe>
+      </div>
+      <div class="reel">
+        <iframe src="https://www.youtube.com/embed/9bZkp7q19f0?enablejsapi=1&playsinline=1" 
+                allow="autoplay; encrypted-media" 
+                loading="lazy">
+        </iframe>
+      </div>
+    </div>
+    
+    <div class="controls">
+      <button onclick="prevReel()" aria-label="Previous reel">‹</button>
+      <button onclick="nextReel()" aria-label="Next reel">›</button>
+    </div>
+  </div>
+</section>
+
+<script>
+  class ReelStack {
+    constructor() {
+      this.reels = document.querySelectorAll('.reel');
+      this.iframes = document.querySelectorAll('.reel iframe');
+      this.currentIndex = 0;
+      this.totalReels = this.reels.length;
+      this.isTransitioning = false;
+      
+      this.init();
+    }
+    
+    init() {
+      this.setupTouchEvents();
+      this.setupKeyboardEvents();
+      this.updateStack();
+      
+      // Preload iframes
+      this.iframes.forEach(iframe => {
+        iframe.addEventListener('load', () => {
+          iframe.parentElement.querySelector('::before')?.remove();
+        });
+      });
+    }
+    
+    setupTouchEvents() {
+      const container = document.querySelector('.reels-container');
+      let startX = 0;
+      let startY = 0;
+      let threshold = 50;
+      
+      container.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+      }, { passive: true });
+      
+      container.addEventListener('touchend', (e) => {
+        if (this.isTransitioning) return;
+        
+        const endX = e.changedTouches[0].clientX;
+        const endY = e.changedTouches[0].clientY;
+        const deltaX = endX - startX;
+        const deltaY = endY - startY;
+        
+        // Only handle horizontal swipes (ignore vertical scrolling)
+        if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > threshold) {
+          e.preventDefault();
+          
+          if (deltaX > 0) {
+            this.prevReel();
+          } else {
+            this.nextReel();
+          }
+        }
+      }, { passive: false });
+    }
+    
+    setupKeyboardEvents() {
+      document.addEventListener('keydown', (e) => {
+        if (this.isTransitioning) return;
+        
+        switch(e.key) {
+          case 'ArrowLeft':
+            e.preventDefault();
+            this.prevReel();
+            break;
+          case 'ArrowRight':
+            e.preventDefault();
+            this.nextReel();
+            break;
+        }
+      });
+    }
+    
+    postToIframe(iframe, command) {
+      try {
+        iframe.contentWindow?.postMessage(JSON.stringify({
+          event: "command",
+          func: command,
+          args: []
+        }), "*");
+      } catch (error) {
+        // Silently handle cross-origin iframe errors
+      }
+    }
+    
+    updateStack() {
+      this.isTransitioning = true;
+      
+      this.reels.forEach((reel, index) => {
+        reel.classList.remove('active', 'left-1', 'left-2', 'right-1', 'right-2', 'hidden');
+        
+        // Pause all videos first
+        this.postToIframe(this.iframes[index], 'pauseVideo');
+        
+        const relativeIndex = (index - this.currentIndex + this.totalReels) % this.totalReels;
+        
+        if (relativeIndex === 0) {
+          reel.classList.add('active');
+          // Play active video with a small delay
+          setTimeout(() => {
+            this.postToIframe(this.iframes[index], 'playVideo');
+          }, 400);
+        } else if (relativeIndex === 1) {
+          reel.classList.add('right-1');
+        } else if (relativeIndex === 2) {
+          reel.classList.add('right-2');
+        } else if (relativeIndex === this.totalReels - 1) {
+          reel.classList.add('left-1');
+        } else if (relativeIndex === this.totalReels - 2) {
+          reel.classList.add('left-2');
+        } else {
+          reel.classList.add('hidden');
+        }
+      });
+      
+      // Reset transition lock after animation completes
+      setTimeout(() => {
+        this.isTransitioning = false;
+      }, 700);
+    }
+    
+    nextReel() {
+      if (this.isTransitioning) return;
+      this.currentIndex = (this.currentIndex + 1) % this.totalReels;
+      this.updateStack();
+    }
+    
+    prevReel() {
+      if (this.isTransitioning) return;
+      this.currentIndex = (this.currentIndex - 1 + this.totalReels) % this.totalReels;
+      this.updateStack();
+    }
+  }
+  
+  // Global functions for button clicks
+  let reelStackInstance;
+  
+  function nextReel() {
+    reelStackInstance?.nextReel();
+  }
+  
+  function prevReel() {
+    reelStackInstance?.prevReel();
+  }
+  
+  // Initialize when DOM is loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    reelStackInstance = new ReelStack();
+  });
+  
+  // Handle page visibility changes
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      // Pause all videos when page is hidden
+      document.querySelectorAll('.reel iframe').forEach(iframe => {
+        reelStackInstance?.postToIframe(iframe, 'pauseVideo');
+      });
+    }
+  });
+</script>
+
+</body>
+</html>

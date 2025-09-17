@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudarshan Solar Sales and Services - Amalner</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            padding-left: 80px;
+            padding-right: 80px;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            background: #ffd700;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #1e3c72;
+            margin-right: 1rem;
+        }
+
+        .company-name {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .company-location {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .header-contact {
+            text-align: right;
+        }
+
+        .header-contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            justify-content: flex-end;
+        }
+
+        .header-contact-icon {
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .header-contact-text {
+            font-size: 0.9rem;
+        }
+
+        /* Language Selector */
+        .language-selector {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 5px;
+            padding: 0.5rem;
+        }
+
+        .language-selector select {
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .language-selector select option {
+            color: #333;
+        }
+
+        /* Social Media Sidebar */
+        .social-sidebar {
+            position: fixed;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            padding: 1rem 0;
+            border-radius: 0 15px 15px 0;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .social-item {
+            display: block;
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0.5rem;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-item:hover {
+            background: rgba(255,255,255,0.2);
+            transform: scale(1.1);
+        }
+
+        /* Enquiry Sidebar */
+        .enquiry-sidebar {
+            position: fixed;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #ffd700, #ffed4a);
+            padding: 1rem;
+            border-radius: 15px 0 0 15px;
+            box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            width: 60px;
+            transition: width 0.3s ease;
+        }
+
+        .enquiry-sidebar:hover {
+            width: 200px;
+        }
+
+        .enquiry-btn {
+            background: #1e3c72;
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .enquiry-form {
+            display: none;
+            margin-top: 1rem;
+        }
+
+        .enquiry-sidebar:hover .enquiry-form {
+            display: block;
+        }
+
+        .enquiry-form input,
+        .enquiry-form textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 0.8rem;
+        }
+
+        .enquiry-form button {
+            background: #1e3c72;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 0.8rem;
+        }
+
+        /* Navigation */
+        .nav {
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            justify-content: space-between;
+            display: flex;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            padding: 0 2rem;
+            justify-content: right;
+        }
+
+        .nav-d {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #1e3c72;
+            margin-right: 1rem;
+            padding-top: 20px;
+            padding-left: 20px;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            display: block;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background: #f0f8ff;
+            color: #2a5298;
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 250px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+
+        .nav-item:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            padding: 0.8rem 1.5rem;
+            border-bottom: 1px solid #eee;
+            color: #333;
+            text-decoration: none;
+            display: block;
+            transition: background 0.3s ease;
+            cursor: pointer;
+        }
+
+        .dropdown-item:hover {
+            background: #f0f8ff;
+            color: #2a5298;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Product Pages */
+        .product-page {
+            display: none;
+            margin: 2rem 0;
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .product-page.active {
+            display: block;
+        }
+
+        .product-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .product-title {
+            font-size: 2.5rem;
+            color: #1e3c72;
+            margin-bottom: 1rem;
+        }
+
+        .product-image {
+            width: 100%;
+            max-width: 500px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 1rem auto;
+            display: block;
+        }
+
+        .product-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .product-info {
+            background: #f8f9ff;
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
+        .product-specs {
+            background: #e8f2ff;
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
+        .back-btn {
+            background: #1e3c72;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .back-btn:hover {
+            background: #2a5298;
+        }
+
+        /* Image Slider */
+        .slider-container {
+            position: relative;
+            margin: 2rem 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .slider {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slide-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(328deg, rgb(30 60 114 / 0%), rgb(42 82 152 / 64%));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .slide-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .slide-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+        }
+
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.8);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .slider-nav:hover {
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .prev {
+            left: 20px;
+        }
+
+        .next {
+            right: 20px;
+        }
+
+        /* Section Styles */
+        .section {
+            margin: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #1e3c72;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #ffd700, #ffed4a);
+            border-radius: 2px;
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            border-color: #ffd700;
+        }
+
+        .product-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #ffd700, #ffed4a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 2rem;
+            color: #1e3c72;
+        }
+
+        .product-card h3 {
+            color: #1e3c72;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #f8f9ff, #e8f2ff);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border-left: 5px solid #2a5298;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(42,82,152,0.2);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: #2a5298;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        /* Team Grid */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .team-avatar {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #2a5298, #1e3c72);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .team-name {
+            font-size: 1.3rem;
+            color: #1e3c72;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-role {
+            color: #666;
+            font-style: italic;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+        }
+
+        .map-container {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* About Section */
+        .about-content {
+            background: linear-gradient(135deg, #f8f9ff, #e8f2ff);
+            padding: 3rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #555;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            .social-sidebar,
+            .enquiry-sidebar {
+                display: none;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                padding: 1rem;
+            }
+
+            .logo {
+                margin-bottom: 1rem;
+            }
+
+            .nav-content {
+                flex-direction: column;
+                padding: 0;
+            }
+
+            .nav-link {
+                text-align: center;
+            }
+
+            .slide-content h2 {
+                font-size: 1.8rem;
+            }
+
+            .slide-content p {
+                font-size: 1rem;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .product-details {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Social Media Sidebar -->
+    <div class="social-sidebar">
+        <a href="#" class="social-item">📘</a>
+        <a href="#" class="social-item">📸</a>
+        <a href="#" class="social-item">🐦</a>
+        <a href="#" class="social-item">💼</a>
+        <a href="#" class="social-item">📺</a>
+        <a href="https://wa.me/917507302832" class="social-item">💬</a>
+    </div>
+
+    <!-- Enquiry Sidebar -->
+    <div class="enquiry-sidebar">
+        <button class="enquiry-btn" onclick="toggleEnquiry()">📝</button>
+        <div class="enquiry-form" id="enquiry-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="tel" placeholder="Phone Number" required>
+            <input type="email" placeholder="Email Address" required>
+            <textarea placeholder="Your Message" rows="3" required></textarea>
+            <button type="submit">Send Enquiry</button>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="language-selector">
+            <select onchange="changeLanguage(this.value)">
+                <option value="en">English</option>
+                <option value="mr">मराठी</option>
+            </select>
+        </div>
+        <div class="header-content">
+            <div class="logo-section">
+                <div class="logo">☀️</div>
+                <div>
+                    <div class="company-name" data-en="Sudarshan Solar Sales and Services" data-mr="सुदर्शन सोलर सेल्स अँड सर्व्हिसेस">Sudarshan Solar Sales and Services</div>
+                    <div class="company-location" data-en="Amalner" data-mr="अमलनेर">Amalner</div>
+                </div>
+            </div>
+            <div class="header-contact">
+                <div class="header-contact-item">
+                    <span class="header-contact-icon">📍</span>
+                    <span class="header-contact-text">Shop No: 10, Cotton Market, Dhule Road, Amalner-425401</span>
+                </div>
+                <div class="header-contact-item">
+                    <span class="header-contact-icon">📞</span>
+                    <span class="header-contact-text">+91 7507302832 / +91 8698374640</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-d">☀️</div>
+        <div class="nav-content">
+            <div class="nav-item">
+                <a href="#home" class="nav-link" data-en="Home" data-mr="होम">Home</a>
+            </div>
+            <div class="nav-item">
+                <a href="#products" class="nav-link" data-en="Products" data-mr="उत्पादने">Products</a>
+                <div class="dropdown">
+                    <div class="dropdown-item" onclick="showProduct('solar-water-heater')" data-en="Solar Water Heater" data-mr="सोलर वॉटर हीटर">Solar Water Heater</div>
+                    <div class="dropdown-item" onclick="showProduct('solar-grid-connected')" data-en="Solar Grid Connected System" data-mr="सोलर ग्रिड कनेक्टेड सिस्टम">Solar Grid Connected System</div>
+                    <div class="dropdown-item" onclick="showProduct('solar-off-grid')" data-en="Solar Off-Grid System" data-mr="सोलर ऑफ-ग्रिड सिस्टम">Solar Off-Grid System</div>
+                    <div class="dropdown-item" onclick="showProduct('solar-mini-grid')" data-en="Solar Mini-grid System" data-mr="सोलर मिनी-ग्रिड सिस्टम">Solar Mini-grid System</div>
+                    <div class="dropdown-item" onclick="showProduct('solar-repair')" data-en="Solar Repair and Maintenance" data-mr="सोलर रिपेअर आणि मेंटेनन्स">Solar Repair and Maintenance</div>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#services" class="nav-link" data-en="Services" data-mr="सेवा">Services</a>
+            </div>
+            <div class="nav-item">
+                <a href="#about" class="nav-link" data-en="About Us" data-mr="आमच्याबद्दल">About Us</a>
+            </div>
+            <div class="nav-item">
+                <a href="#team" class="nav-link" data-en="Team" data-mr="टीम">Team</a>
+            </div>
+            <div class="nav-item">
+                <a href="#contact" class="nav-link" data-en="Contact Us" data-mr="संपर्क">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Product Pages -->
+        <div id="solar-water-heater" class="product-page">
+            <button class="back-btn" onclick="hideProduct()">← Back to Products</button>
+            <div class="product-header">
+                <h1 class="product-title">Solar Water Heater</h1>
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 300'%3E%3Crect width='500' height='300' fill='%23e8f2ff'/%3E%3Crect x='50' y='50' width='400' height='200' fill='%23333' rx='10'/%3E%3Crect x='70' y='70' width='360' height='160' fill='%23002244' rx='5'/%3E%3Ccircle cx='225' cy='100' r='15' fill='%23ffd700'/%3E%3Ctext x='250' y='200' fill='%23333' font-size='24' font-family='Arial'%3ESolar Water Heater%3C/text%3E%3C/svg%3E" alt="Solar Water Heater" class="product-image">
+            </div>
+            <div class="product-details">
+                <div class="product-info">
+                    <h3>Product Information</h3>
+                    <p>Our Solar Water Heaters are designed to provide efficient, eco-friendly hot water solutions for residential and commercial use. These systems harness solar energy to heat water, significantly reducing electricity costs.</p>
+                    <h4>Key Features:</h4>
+                    <ul>
+                        <li>Energy efficient solar collectors</li>
+                        <li>Insulated storage tank</li>
+                        <li>Automatic temperature control</li>
+                        <li>Corrosion resistant materials</li>
+                        <li>Easy installation and maintenance</li>
+                    </ul>
+                </div>
+                <div class="product-specs">
+                    <h3>Technical Specifications</h3>
+                    <ul>
+                        <li><strong>Capacity:</strong> 100L to 500L</li>
+                        <li><strong>Material:</strong> Stainless Steel</li>
+                        <li><strong>Collector Type:</strong> Flat Plate Collector</li>
+                        <li><strong>Warranty:</strong> 5 Years</li>
+                        <li><strong>Installation:</strong> Roof-mounted</li>
+                        <li><strong>Efficiency:</strong> 70-80%</li>
+                    </ul>
+                    <h4>Price Range:</h4>
+                    <p>₹15,000 - ₹45,000 (depending on capacity)</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="solar-grid-connected" class="product-page">
+            <button class="back-btn" onclick="hideProduct()">← Back to Products</button>
+            <div class="product-header">
+                <h1 class="product-title">Solar Grid Connected System</h1>
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 300'%3E%3Crect width='500' height='300' fill='%23f0f8ff'/%3E%3Crect x='50' y='80' width='80' height='140' fill='%23333' rx='5'/%3E%3Crect x='140' y='80' width='80' height='140' fill='%23333' rx='5'/%3E%3Crect x='230' y='80' width='80' height='140' fill='%23333' rx='5'/%3E%3Crect x='320' y='80' width='80' height='140' fill='%23333' rx='5'/%3E%3Cline x1='50' y1='250' x2='450' y2='250' stroke='%23666' stroke-width='3'/%3E%3Ctext x='250' y='40' text-anchor='middle' fill='%23333' font-size='18' font-family='Arial'%3ESolar Grid Connected%3C/text%3E%3C/svg%3E" alt="Solar Grid Connected System" class="product-image">
+            </div>
+            <div class="product-details">
+                <div class="product-info">
+                    <h3>Product Information</h3>
+                    <p>Grid-connected solar systems allow you to generate your own electricity while remaining connected to the utility grid. These systems can feed excess power back to the grid, earning you credits through net metering.</p>
+                    <h4>Key Features:</h4>
+                    <ul>
+                        <li>High-efficiency solar panels</li>
+                        <li>Grid-tie inverter</li>
+                        <li>Net metering capability</li>
+                        <li>Monitoring system</li>
+                        <li>No battery storage required</li>
+                    </ul>
+                </div>
+                <div class="product-specs">
+                    <h3>Technical Specifications</h3>
+                    <ul>
+                        <li><strong>System Size:</strong> 1kW to 100kW</li>
+                        <li><strong>Panel Type:</strong> Monocrystalline/Polycrystalline</li>
+                        <li><strong>Inverter:</strong> String/Central Inverter</li>
+                        <li><strong>Efficiency:</strong> 18-22%</li>
+                        <li><strong>Warranty:</strong> 25 Years on Panels</li>
+                        <li><strong>Payback Period:</strong> 4-6 Years</li>
+                        <li><strong>Lifespan:</strong> 25+ Years</li>
+                    </ul>
+                    <h4>Price Range:</h4>
+                    <p>₹40,000 - ₹60,000 per kW (installed)</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="solar-off-grid" class="product-page">
+            <button class="back-btn" onclick="hideProduct()">← Back to Products</button>
+            <div class="product-header">
+                <h1 class="product-title">Solar Off-Grid System</h1>
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 300'%3E%3Crect width='500' height='300' fill='%23fff8dc'/%3E%3Crect x='50' y='50' width='120' height='80' fill='%23333' rx='5'/%3E%3Crect x='50' y='150' width='120' height='80' fill='%23333' rx='5'/%3E%3Crect x='200' y='100' width='60' height='100' fill='%23666' rx='5'/%3E%3Crect x='300' y='120' width='40' height='60' fill='%23008000' rx='3'/%3E%3Crect x='350' y='120' width='40' height='60' fill='%23008000' rx='3'/%3E%3Ctext x='250' y='40' text-anchor='middle' fill='%23333' font-size='18' font-family='Arial'%3ESolar Off-Grid System%3C/text%3E%3C/svg%3E" alt="Solar Off-Grid System" class="product-image">
+            </div>
+            <div class="product-details">
+                <div class="product-info">
+                    <h3>Product Information</h3>
+                    <p>Off-grid solar systems provide complete energy independence, perfect for remote locations or as backup power solutions. These systems include battery storage to ensure power availability 24/7.</p>
+                    <h4>Key Features:</h4>
+                    <ul>
+                        <li>Complete energy independence</li>
+                        <li>Battery storage system</li>
+                        <li>Charge controller</li>
+                        <li>Pure sine wave inverter</li>
+                        <li>Backup power capability</li>
+                    </ul>
+                </div>
+                <div class="product-specs">
+                    <h3>Technical Specifications</h3>
+                    <ul>
+                        <li><strong>System Size:</strong> 500W to 10kW</li>
+                        <li><strong>Battery Type:</strong> Lithium-ion/Lead-acid</li>
+                        <li><strong>Backup Time:</strong> 8-24 hours</li>
+                        <li><strong>Inverter:</strong> Pure Sine Wave</li>
+                        <li><strong>Warranty:</strong> 5 Years System</li>
+                        <li><strong>Efficiency:</strong> 85-95%</li>
+                    </ul>
+                    <h4>Price Range:</h4>
+                    <p>₹80,000 - ₹1,50,000 per kW (with batteries)</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="solar-mini-grid" class="product-page">
+            <button class="back-btn" onclick="hideProduct()">← Back to Products</button>
+            <div class="product-header">
+                <h1 class="product-title">Solar Mini-Grid System</h1>
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 300'%3E%3Crect width='500' height='300' fill='%23f0fff0'/%3E%3Crect x='50' y='80' width='60' height='40' fill='%23333' rx='3'/%3E%3Crect x='120' y='80' width='60' height='40' fill='%23333' rx='3'/%3E%3Crect x='190' y='80' width='60' height='40' fill='%23333' rx='3'/%3E%3Crect x='260' y='80' width='60' height='40' fill='%23333' rx='3'/%3E%3Crect x='330' y='80' width='60' height='40' fill='%23333' rx='3'/%3E%3Cline x1='80' y1='140' x2='150' y2='180' stroke='%23666' stroke-width='2'/%3E%3Cline x1='150' y1='140' x2='220' y2='180' stroke='%23666' stroke-width='2'/%3E%3Cline x1='220' y1='140' x2='290' y2='180' stroke='%23666' stroke-width='2'/%3E%3Cline x1='290' y1='140' x2='360' y2='180' stroke='%23666' stroke-width='2'/%3E%3Crect x='100' y='180' width='20' height='20' fill='%23ff6b6b' rx='2'/%3E%3Crect x='170' y='180' width='20' height='20' fill='%23ff6b6b' rx='2'/%3E%3Crect x='240' y='180' width='20' height='20' fill='%23ff6b6b' rx='2'/%3E%3Crect x='310' y='180' width='20' height='20' fill='%23ff6b6b' rx='2'/%3E%3Ctext x='250' y='40' text-anchor='middle' fill='%23333' font-size='18' font-family='Arial'%3ESolar Mini-Grid%3C/text%3E%3C/svg%3E" alt="Solar Mini-Grid System" class="product-image">
+            </div>
+            <div class="product-details">
+                <div class="product-info">
+                    <h3>Product Information</h3>
+                    <p>Mini-grid systems are small-scale power generation and distribution networks that can operate independently or in conjunction with the main electrical grid. Perfect for communities and small businesses.</p>
+                    <h4>Key Features:</h4>
+                    <ul>
+                        <li>Distributed energy system</li>
+                        <li>Multiple connection points</li>
+                        <li>Smart grid technology</li>
+                        <li>Load balancing capability</li>
+                        <li>Remote monitoring</li>
+                    </ul>
+                </div>
+                <div class="product-specs">
+                    <h3>Technical Specifications</h3>
+                    <ul>
+                        <li><strong>System Size:</strong> 10kW to 1MW</li>
+                        <li><strong>Voltage:</strong> 400V/11kV</li>
+                        <li><strong>Connections:</strong> Multiple households/businesses</li>
+                        <li><strong>Control:</strong> Smart grid management</li>
+                        <li><strong>Warranty:</strong> 10 Years</li>
+                        <li><strong>Efficiency:</strong> 90-95%</li>
+                    </ul>
+                    <h4>Price Range:</h4>
+                    <p>₹35,000 - ₹45,000 per kW (customized)</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="solar-repair" class="product-page">
+            <button class="back-btn" onclick="hideProduct()">← Back to Products</button>
+            <div class="product-header">
+                <h1 class="product-title">Solar Repair and Maintenance</h1>
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 300'%3E%3Crect width='500' height='300' fill='%23fff5ee'/%3E%3Crect x='150' y='80' width='200' height='120' fill='%23333' rx='10'/%3E%3Crect x='170' y='100' width='160' height='80' fill='%23004488' rx='5'/%3E%3Ccircle cx='200' cy='130' r='8' fill='%23ffd700'/%3E%3Ccircle cx='230' cy='130' r='8' fill='%23ffd700'/%3E%3Ccircle cx='260' cy='130' r='8' fill='%23ffd700'/%3E%3Ccircle cx='290' cy='130' r='8' fill='%23ffd700'/%3E%3Cpath d='M100 180 L120 160 L140 180 L120 200 Z' fill='%23ff6b6b'/%3E%3Cpath d='M360 180 L380 160 L400 180 L380 200 Z' fill='%234ecdc4'/%3E%3Ctext x='250' y='40' text-anchor='middle' fill='%23333' font-size='18' font-family='Arial'%3ESolar Repair %26 Maintenance%3C/text%3E%3C/svg%3E" alt="Solar Repair and Maintenance" class="product-image">
+            </div>
+            <div class="product-details">
+                <div class="product-info">
+                    <h3>Service Information</h3>
+                    <p>Our comprehensive repair and maintenance services ensure your solar systems operate at peak efficiency. Regular maintenance extends system life and maximizes energy production.</p>
+                    <h4>Services Include:</h4>
+                    <ul>
+                        <li>Panel cleaning and inspection</li>
+                        <li>Inverter maintenance</li>
+                        <li>Electrical connection check</li>
+                        <li>Performance monitoring</li>
+                        <li>Component replacement</li>
+                        <li>System upgrades</li>
+                    </ul>
+                </div>
+                <div class="product-specs">
+                    <h3>Service Specifications</h3>
+                    <ul>
+                        <li><strong>Response Time:</strong> 24-48 hours</li>
+                        <li><strong>Service Area:</strong> Amalner & surrounding areas</li>
+                        <li><strong>Maintenance:</strong> Monthly/Quarterly/Annual</li>
+                        <li><strong>Warranty:</strong> 1 Year on repairs</li>
+                        <li><strong>Availability:</strong> 24/7 Emergency service</li>
+                        <li><strong>Technicians:</strong> Certified professionals</li>
+                    </ul>
+                    <h4>Service Charges:</h4>
+                    <p>₹500 - ₹2,000 (depending on service type)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Home Section with Image Slider -->
+        <section id="home" class="section">
+            <div class="slider-container">
+                <div class="slider">
+                    <div class="slide active">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23f39c12'/%3E%3Crect x='200' y='150' width='400' height='200' fill='%23333' rx='10'/%3E%3Crect x='220' y='170' width='360' height='160' fill='%23002244' rx='5'/%3E%3Ccircle cx='300' cy='220' r='20' fill='%23ffd700'/%3E%3Ccircle cx='350' cy='220' r='20' fill='%23ffd700'/%3E%3Ccircle cx='400' cy='220' r='20' fill='%23ffd700'/%3E%3Ccircle cx='450' cy='220' r='20' fill='%23ffd700'/%3E%3Ccircle cx='500' cy='220' r='20' fill='%23ffd700'/%3E%3Cpath d='M250 280 L300 260 L350 280 L400 260 L450 280 L500 260 L550 280' stroke='%23ffd700' stroke-width='3' fill='none'/%3E%3Ctext x='400' y='400' text-anchor='middle' fill='white' font-size='24' font-family='Arial'%3ESolar Installation%3C/text%3E%3C/svg%3E" alt="Solar Installation" width="800" height="500">
+                        <div class="slide-overlay">
+                            <div class="slide-content">
+                                <h2 data-en="Professional Solar Installation" data-mr="व्यावसायिक सोलर इन्स्टॉलेशन">Professional Solar Installation</h2>
+                                <p data-en="Expert installation of solar panels with premium quality and reliable service in Amalner" data-mr="अमलनेर मध्ये प्रीमियम गुणवत्ता आणि विश्वसनीय सेवेसह सोलर पॅनल्सचे तज्ञ इन्स्टॉलेशन">Expert installation of solar panels with premium quality and reliable service in Amalner</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23e74c3c'/%3E%3Crect x='300' y='200' width='200' height='150' fill='%23333' rx='10'/%3E%3Crect x='320' y='220' width='160' height='80' fill='%23002244' rx='5'/%3E%3Ccircle cx='400' cy='250' r='15' fill='%23ffd700'/%3E%3Cpath d='M350 320 Q400 300 450 320' stroke='%23ff6b6b' stroke-width='5' fill='none'/%3E%3Ctext x='400' y='400' text-anchor='middle' fill='white' font-size='24' font-family='Arial'%3ESolar Water Heating%3C/text%3E%3C/svg%3E" alt="Solar Water Heating" width="800" height="500">
+                        <div class="slide-overlay">
+                            <div class="slide-content">
+                                <h2 data-en="Solar Water Heating Systems" data-mr="सोलर वॉटर हीटिंग सिस्टम">Solar Water Heating Systems</h2>
+                                <p data-en="Efficient and eco-friendly water heating solutions for your home and business" data-mr="आपल्या घरासाठी आणि व्यवसायासाठी कार्यक्षम आणि पर्यावरणास अनुकूल पाणी गरम करण्याचे उपाय">Efficient and eco-friendly water heating solutions for your home and business</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23f39c12'/%3E%3Crect x='300' y='150' width='200' height='200' fill='%23333' rx='10'/%3E%3Crect x='320' y='170' width='160' height='160' fill='%23002244' rx='5'/%3E%3Cpath d='M350 200 L370 180 L390 200 L370 220 Z' fill='%23ffd700'/%3E%3Cpath d='M410 200 L430 180 L450 200 L430 220 Z' fill='%23ffd700'/%3E%3Cpath d='M350 250 L370 230 L390 250 L370 270 Z' fill='%23ffd700'/%3E%3Cpath d='M410 250 L430 230 L450 250 L430 270 Z' fill='%23ffd700'/%3E%3Cpath d='M350 300 L370 280 L390 300 L370 320 Z' fill='%23ffd700'/%3E%3Cpath d='M410 300 L430 280 L450 300 L430 320 Z' fill='%23ffd700'/%3E%3Ctext x='400' y='400' text-anchor='middle' fill='white' font-size='24' font-family='Arial'%3EMaintenance Service%3C/text%3E%3C/svg%3E" alt="Maintenance">
+                        <div class="slide-overlay">
+                            <div class="slide-content">
+                                <h2 data-en="Maintenance & Repair" data-mr="देखभाल आणि दुरुस्ती">Maintenance & Repair</h2>
+                                <p data-en="Complete maintenance and repair services to keep your solar systems running efficiently" data-mr="आपल्या सोलर सिस्टमला कार्यक्षमतेने चालू ठेवण्यासाठी संपूर्ण देखभाल आणि दुरुस्ती सेवा">Complete maintenance and repair services to keep your solar systems running efficiently</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="slider-nav prev" onclick="changeSlide(-1)">❮</button>
+                <button class="slider-nav next" onclick="changeSlide(1)">❯</button>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="section">
+            <h2 class="section-title" data-en="Our Products" data-mr="आमची उत्पादने">Our Products</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-icon">🔌</div>
+                    <h3 data-en="Solar Grid Connected System" data-mr="सोलर ग्रिड कनेक्टेड सिस्टम">Solar Grid Connected System</h3>
+                    <p data-en="Connect your solar system to the grid and enjoy seamless power supply with net metering benefits." data-mr="आपल्या सोलर सिस्टमला ग्रिडशी जोडा आणि नेट मीटरिंग फायद्यांसह अखंड वीज पुरवठा मिळवा.">Connect your solar system to the grid and enjoy seamless power supply with net metering benefits.</p>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">🚿</div>
+                    <h3 data-en="Solar Water Heater" data-mr="सोलर वॉटर हीटर">Solar Water Heater</h3>
+                    <p data-en="Eco-friendly water heating solution that reduces your electricity bills and carbon footprint." data-mr="पर्यावरणस अनुकूल पाणी गरम करण्याचे उपाय जे आपले वीज बिल आणि कार्बन फूटप्रिंट कमी करते.">Eco-friendly water heating solution that reduces your electricity bills and carbon footprint.</p>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">🔋</div>
+                    <h3 data-en="Solar Off-Grid System" data-mr="सोलर ऑफ-ग्रिड सिस्टम">Solar Off-Grid System</h3>
+                    <p data-en="Independent power generation system perfect for remote areas and backup power solutions." data-mr="दुर्गम भागांसाठी आणि बॅकअप वीज उपायांसाठी परिपूर्ण स्वतंत्र वीज निर्मिती प्रणाली.">Independent power generation system perfect for remote areas and backup power solutions.</p>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">⚡</div>
+                    <h3 data-en="Solar Mini-grid System" data-mr="सोलर मिनी-ग्रिड सिस्टम">Solar Mini-grid System</h3>
+                    <p data-en="Small-scale distributed energy system ideal for communities and small businesses." data-mr="समुदाय आणि छोट्या व्यवसायांसाठी आदर्श लहान-प्रमाणात वितरित उर्जा प्रणाली.">Small-scale distributed energy system ideal for communities and small businesses.</p>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">🔧</div>
+                    <h3 data-en="Solar Repair and Maintenance" data-mr="सोलर रिपेअर आणि मेंटेनन्स">Solar Repair and Maintenance</h3>
+                    <p data-en="Comprehensive repair and maintenance services to ensure optimal performance of your solar systems." data-mr="आपल्या सोलर सिस्टमची इष्टतम कार्यक्षमता सुनिश्चित करण्यासाठी सर्वसमावेशक दुरुस्ती आणि देखभाल सेवा.">Comprehensive repair and maintenance services to ensure optimal performance of your solar systems.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section">
+            <h2 class="section-title" data-en="Our Services" data-mr="आमच्या सेवा">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🛠️</div>
+                    <h3 data-en="All Types Of Service" data-mr="सर्व प्रकारच्या सेवा">All Types Of Service</h3>
+                    <p data-en="Complete solar system services including installation, repair, and consultation." data-mr="इन्स्टॉलेशन, दुरुस्ती आणि सल्लामसलत यासह संपूर्ण सोलर सिस्टम सेवा.">Complete solar system services including installation, repair, and consultation.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3 data-en="System Maintenance" data-mr="सिस्टम मेंटेनन्स">System Maintenance</h3>
+                    <p data-en="Regular maintenance to ensure optimal performance and longevity of your solar systems." data-mr="आपल्या सोलर सिस्टमची इष्टतम कार्यक्षमता आणि दीर्घायुष्य सुनिश्चित करण्यासाठी नियमित देखभाल.">Regular maintenance to ensure optimal performance and longevity of your solar systems.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🧽</div>
+                    <h3 data-en="System Cleaning" data-mr="सिस्टम साफसफाई">System Cleaning</h3>
+                    <p data-en="Professional cleaning services to maintain maximum efficiency of your solar panels." data-mr="आपल्या सोलर पॅनल्सची कमाल कार्यक्षमता राखण्यासाठी व्यावसायिक साफसफाई सेवा.">Professional cleaning services to maintain maximum efficiency of your solar panels.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📦</div>
+                    <h3 data-en="System Dismantals" data-mr="सिस्टम डिस्मॅन्टल्स">System Dismantals</h3>
+                    <p data-en="Safe and professional dismantling services for solar system relocation or removal." data-mr="सोलर सिस्टम स्थानांतरण किंवा काढण्यासाठी सुरक्षित आणि व्यावसायिक नष्ट करण्याच्या सेवा.">Safe and professional dismantling services for solar system relocation or removal.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="section">
+            <h2 class="section-title" data-en="About Us" data-mr="आमच्याबद्दल">About Us</h2>
+            <div class="about-content">
+                <p data-en="Sudarshan Solar Sales and Services is a leading provider of solar energy solutions in Amalner. We specialize in designing, installing, and maintaining high-quality solar systems for residential, commercial, and industrial applications. With years of experience in the renewable energy sector, our team is committed to delivering sustainable and cost-effective solar solutions that help reduce energy costs and environmental impact. We pride ourselves on our technical expertise, quality products, and exceptional customer service." data-mr="सुदर्शन सोलर सेल्स अँड सर्व्हिसेस हे अमलनेर मधील सोलर एनर्जी समाधानांचा आघाडीचा पुरवठादार आहे. आम्ही निवासी, व्यावसायिक आणि औद्योगिक अनुप्रयोगांसाठी उच्च-गुणवत्तेच्या सोलर सिस्टमची रचना, स्थापना आणि देखभाल करण्यात तज्ञ आहोत. नवीकरणीय ऊर्जा क्षेत्रातील अनेक वर्षांच्या अनुभवासह, आमची टीम शाश्वत आणि किफायतशीर सोलर समाधाने देण्यासाठी वचनबद्ध आहे जी ऊर्जा खर्च आणि पर्यावरणीय प्रभाव कमी करण्यास मदत करतात. आम्हाला आमचे तांत्रिक कौशल्य, गुणवत्तेची उत्पादने आणि अपवादात्मक ग्राहक सेवा याचा अभिमान आहे.">
+                    Sudarshan Solar Sales and Services is a leading provider of solar energy solutions in Amalner. 
+                    We specialize in designing, installing, and maintaining high-quality solar systems for residential, 
+                    commercial, and industrial applications. With years of experience in the renewable energy sector, 
+                    our team is committed to delivering sustainable and cost-effective solar solutions that help reduce 
+                    energy costs and environmental impact. We pride ourselves on our technical expertise, quality products, 
+                    and exceptional customer service.
+                </p>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" class="section">
+            <h2 class="section-title" data-en="Our Team" data-mr="आमची टीम">Our Team</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">SD</div>
+                    <div class="team-name">Shubham Dhangar</div>
+                    <div class="team-role" data-en="Owner + Solar Engineer And Technician" data-mr="मालक + सोलर इंजिनीअर आणि तंत्रज्ञ">Owner + Solar Engineer And Technician</div>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">SD</div>
+                    <div class="team-name">Sunil Dhangar</div>
+                    <div class="team-role" data-en="Solar Technician" data-mr="सोलर तंत्रज्ञ">Solar Technician</div>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">SP</div>
+                    <div class="team-name">Satish Patil</div>
+                    <div class="team-role" data-en="Welder" data-mr="वेल्डर">Welder</div>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">AP</div>
+                    <div class="team-name">Atul Patil</div>
+                    <div class="team-role" data-en="Plumber" data-mr="प्लंबर">Plumber</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <h2 class="section-title" data-en="Contact Us" data-mr="संपर्क करा">Contact Us</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h4 data-en="Address" data-mr="पत्ता">Address</h4>
+                            <p>Shop No: 10, Cotton market, Dhule Road, Amalner-
+
+                                 </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+91 7507302832 / +91 8698374640</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@sudarshansolar.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🕒</div>
+                        <div>
+                            <h4>Working Hours</h4>
+                            <p>Mon - Sat: 9:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <iframe 
+
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3778.640434879639!2d75.0517909!3d21.0379682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1sChIJS3eQhKRuwzsRlFPD9UjCrZw!2sCotton%20Market%2C%20Dhule%20Rd%2C%20R%20K%20Nagar%2C%20Amalner%2C%20Maharashtra%20425401!5e0!3m2!1sen!2sin!4vYOUR_TIMESTAMP" 
+                        width="100%" 
+                        height="450"
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Sudarshan Solar Sales and Services. All rights reserved. | Designed with ❤️ for sustainable energy</p>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+        }
+
+        function changeSlide(direction) {
+            currentSlide += direction;
+            if (currentSlide >= totalSlides) currentSlide = 0;
+            if (currentSlide < 0) currentSlide = totalSlides - 1;
+            showSlide(currentSlide);
+        }
+
+        // Auto-slide every 5 seconds
+        setInterval(() => {
+            changeSlide(1);
+        }, 5000);
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
